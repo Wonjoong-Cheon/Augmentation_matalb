@@ -31,17 +31,6 @@ end
 
 %%
 
-for iter1 = 1:size(folders,1)
-        DicomImgName = [folder_dir '\' folders(iter1).name];
-        DicomImg = dicomread(DicomImgName);
-        DicomImg_gray = rgb2gray(DicomImg);
-        DicomImg_gray_boolian = DicomImg_gray<50;
-        circles = houghcircles(DicomImg_gray_boolian, 1600, 1650);
-end
-
-
-%%
-
 waitbar_maxsz = (size(folders,1));
 h = waitbar(0,'Please wait...');
 for iter1 = 1:size(folders,1)
@@ -50,12 +39,7 @@ for iter1 = 1:size(folders,1)
         DicomImgName = [folder_dir '\' folders(iter1).name];
         DicomImg = dicomread(DicomImgName);
         DicomImg_gray = rgb2gray(DicomImg);
-        DicomImg_gray_boolian = DicomImg_gray<50;
-        figure, imshow(ans)
-        
-         circles = houghcircles(DicomImg_gray_boolian, 1600, 1650)
-        [centers, radii, metric]  = imfindcircles(DicomImg_gray_boolian,[1600 1650]);
-        figure, imshow(DicomImg_gray_boolian)
+        [centers, radii, metric]  = imfindcircles(DicomImg_gray,[1500 1700]);
         
         
         
