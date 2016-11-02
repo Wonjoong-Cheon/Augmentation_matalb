@@ -47,9 +47,10 @@ for iter1 = 1:20
             flag = false;
         else
             circles(index_back+1:index_back+circles_buffer_sz-1,1:4) = houghcircles(DicomImg_gray_boolian, 1600, 1650);
-            index_back = index_back+circles_buffer_sz-1;
+            index_back
         end
         
+        circles(iter1:circles_buffer_sz,1:4) = houghcircles(DicomImg_gray_boolian, 1600, 1650);
         clear DicomImgName DicomImg DicomImg_gray DicomImg_gray_boolian
 end
 
