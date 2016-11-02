@@ -68,7 +68,7 @@ for iter1 = 1:size(folders,1)
         Pngfile_name_l_d = [folders(iter1).name(1:end-4), '_l_d', '.png'];
         Pngfile_name_l_d_rplus = [folders(iter1).name(1:end-4), '_l_d_rplus', '.png'];
         Pngfile_name_l_d_rminus = [folders(iter1).name(1:end-4), '_l_d_rminus', '.png'];
-       
+        
         imwrite(DicomImg_croped,fullfile(PngTarget_dir,Pngfile_name_r),'png');
         imwrite(DicomImg_croped_r_d,fullfile(PngTarget_dir,Pngfile_name_r_d),'png');
         imwrite(DicomImg_croped_r_d_rplus,fullfile(PngTarget_dir,Pngfile_name_r_d_rplus),'png');
@@ -79,8 +79,41 @@ for iter1 = 1:size(folders,1)
         imwrite(DicomImg_croped_l_d_rplus,fullfile(PngTarget_dir,Pngfile_name_l_d_rplus),'png');
         imwrite(DicomImg_croped_l_d_rminus,fullfile(PngTarget_dir,Pngfile_name_l_d_rminus),'png');
         
+        
     end
     disp(iter1)
     waitbar(iter1/waitbar_maxsz)
 end
 close(h)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
